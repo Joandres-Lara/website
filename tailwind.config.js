@@ -4,7 +4,7 @@ module.exports = {
  theme: {
   extend: {},
   fontFamily: {
-   sans: ["Railway", "sans-serif"],
+   sans: ["Raleway", "sans-serif"],
   },
   colors: {
    black: "#333"

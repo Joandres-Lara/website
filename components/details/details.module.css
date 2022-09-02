@@ -1,0 +1,18 @@
+.photo_main__shadow_background {
+ @apply absolute top-0 right-0 left-0 bottom-0;
+ background: linear-gradient(
+  270deg,
+  #ffffff 5.58%,
+  rgba(217, 217, 217, 0) 82.29%
+ );
+}
+
+.photo_main__image {
+ transform: rotate(45deg) scale(1.5) translate(-60px, -100px);
+}
+
+.details_text {
+ &_name {
+  margin-left: -200px;
+ }
+}
