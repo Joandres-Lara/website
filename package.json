@@ -10,10 +10,10 @@
   "react-dom": "^18.2.0"
  },
  "scripts": {
-  "dev": "yarn dev",
-  "start": "yarn start",
-  "build": "yarn build",
-  "lint": "yarn lint"
+  "dev": "next dev",
+  "start": "next start",
+  "build": "next build",
+  "lint": "next lint"
  },
  "devDependencies": {
   "@next/eslint-plugin-next": "^12.2.5",
