@@ -21,7 +21,7 @@ export default function Details() {
 
    <div className={`relative w-2/5 py-16 ${classesDetails.details_text}`}>
     <h1
-     className={`text-black text-9xl font-bold ${classesDetails.details_text_name}`}
+     className={`text-black text-8xl font-bold ${classesDetails.details_text_name}`}
     >
      Joan Andrés Lara Mora
     </h1>
@@ -31,8 +31,12 @@ export default function Details() {
       <a href="https://github.com/Joandres-Lara">
        <Image width={50} height={50} layout="fixed" src={githubSrcSvg} />
       </a>
-      <Image width={50} height={50} layout="fixed" src={linkedinSrcSvg} />
-      <Image width={50} height={50} layout="fixed" src={emailSrcSvg} />
+      <a href="https://www.linkedin.com/in/joan-andr%C3%A9s-lara-mora-194444224/">
+       <Image width={50} height={50} layout="fixed" src={linkedinSrcSvg} />
+      </a>
+      <a href="mailto:joan.lara.mora@gmail.com">
+       <Image width={50} height={50} layout="fixed" src={emailSrcSvg} />
+      </a>
      </div>
 
      <div className="flex flex-col items-center mt-16 opacity-40">

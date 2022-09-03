@@ -1,3 +1,7 @@
 export default function Projects() {
- return <h2>Proyectos</h2>;
+ return (
+  <div className="container">
+   <h2 className="title">Proyectos</h2>
+  </div>
+ );
 }
