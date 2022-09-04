@@ -1,0 +1,6 @@
+.default-container{
+ @apply px-8 md:px-16 py-6;
+ .title{
+  @apply text-black text-7xl md:text-8xl font-bold py-16;
+ }
+}

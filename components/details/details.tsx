@@ -7,27 +7,27 @@ import classesDetails from "./details.module.css";
 
 export default function Details() {
  return (
-  <div className="flex flex-row flex-nowrap h-screen">
-   <div className="relative w-3/5 overflow-hidden">
+  <div className="flex flex-col md:flex-row md:flex-nowrap h-screen w-full md:w-auto">
+   <div className="relative md:w-3/5 w-full overflow-hidden">
     <Image
      className={classesDetails.photo_main__image}
      src="/main-photo.jpg"
-     layout="responsive"
+     layout="fixed"
      width={960}
      height={959}
     />
     <div className={classesDetails.photo_main__shadow_background} />
    </div>
 
-   <div className={`relative w-2/5 py-16 ${classesDetails.details_text}`}>
+   <div className={`default-container md:relative bottom-0 absolute md:w-2/5 w-full ${classesDetails.details_text}`}>
     <h1
-     className={`text-black text-8xl font-bold ${classesDetails.details_text_name}`}
+     className={`title text-center md:text-left ${classesDetails.details_text_name}`}
     >
      Joan Andrés Lara Mora
     </h1>
-    <div className="py-10 w-full flex flex-col items-center">
+    <div className="w-full flex flex-col items-center">
      <h2 className="text-black text-4xl py-6">Fullstack developer</h2>
-     <div className="flex flex-row justify-between w-1/3">
+     <div className="flex flex-row justify-around w-8/12 md:w-3/6">
       <a href="https://github.com/Joandres-Lara">
        <Image width={50} height={50} layout="fixed" src={githubSrcSvg} />
       </a>

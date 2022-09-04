@@ -1,0 +1,26 @@
+.project {
+ @apply w-full md:w-1/2 relative my-10 md:my-0;
+
+ height: 300px;
+
+ .gradient {
+  @apply absolute top-0 bottom-0 right-0 left-0;
+  background-image: linear-gradient(
+   0deg,
+   #ffffff 15%,
+   rgba(217, 217, 217, 0) 90%
+  );
+ }
+
+ .title {
+  @apply text-center text-4xl font-bold py-2;
+ }
+
+ .description {
+  @apply text-center py-3;
+ }
+
+ .image {
+  @apply absolute bg-center bg-cover top-0 left-0 right-0 bottom-0 -z-10;
+ }
+}
