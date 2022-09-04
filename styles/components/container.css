@@ -1,6 +1,0 @@
-.container{
- @apply px-16 py-6;
- .title{
-  @apply text-8xl font-bold py-16;
- }
-}
