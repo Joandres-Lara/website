@@ -6,7 +6,7 @@
   #ffffff 40%,
   rgba(217, 217, 217, 0) 95%
  );
-
+;
  @media screen(md){
   background-image: linear-gradient(
    270deg,
@@ -25,8 +25,13 @@
 }
 
 .details_text {
+ @apply bottom-0 absolute w-full md:relative md:w-2/5;
+
  &_name {
+  @apply text-center;
+  
   @media screen(md){
+   @apply text-left;
    margin-left: -200px;
   }
  }

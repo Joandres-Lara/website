@@ -8,6 +8,8 @@
  --size-indicator-md: 50px;
  --size-indicator-base: 75px;
 
+ @apply flex flex-col;
+
  width: 150px;
 
  @media screen(md){
@@ -15,6 +17,7 @@
  }
 
  .timeline__icon{
+  @apply flex flex-row w-full items-center;
   transform: rotate(90deg);
 
   @media screen(md){
