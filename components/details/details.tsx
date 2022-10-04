@@ -19,9 +19,9 @@ export default function Details() {
     <div className={classesDetails.photo_main__shadow_background} />
    </div>
 
-   <div className={`default-container md:relative bottom-0 absolute md:w-2/5 w-full ${classesDetails.details_text}`}>
+   <div className={`default-container ${classesDetails.details_text}`}>
     <h1
-     className={`title text-center md:text-left ${classesDetails.details_text_name}`}
+     className={`title ${classesDetails.details_text_name}`}
     >
      Joan Andrés Lara Mora
     </h1>
@@ -40,7 +40,7 @@ export default function Details() {
      </div>
 
      <div className="flex flex-col items-center mt-16 opacity-40">
-      <span className="text-3xl">Scroll down</span>
+      <span className="text-3xl animation:up-down">Scroll down</span>
       <Image layout="fixed" width={50} height={50} src={arrowDownSrcSvg} />
      </div>
     </div>
