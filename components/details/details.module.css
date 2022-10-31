@@ -6,8 +6,8 @@
   #ffffff 40%,
   rgba(217, 217, 217, 0) 95%
  );
-;
- @media screen(md){
+
+ @media screen(md) {
   background-image: linear-gradient(
    270deg,
    #ffffff 5.58%,
@@ -19,7 +19,7 @@
 .photo_main__image {
  transform: rotate(45deg) translate(-350px);
 
- @media screen(md){
+ @media screen(md) {
   transform: rotate(45deg) scale(1.25) translate(-70px, -100px);
  }
 }
@@ -29,8 +29,8 @@
 
  &_name {
   @apply text-center;
-  
-  @media screen(md){
+
+  @media screen(md) {
    @apply text-left;
    margin-left: -200px;
   }
