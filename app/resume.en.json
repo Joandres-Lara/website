@@ -1,7 +1,7 @@
 {
  "basics": {
   "name": "Joan Andrés Lara Mora",
-  "label": "Fullstack Developver",
+  "label": "Fullstack Developer",
   "image": "",
   "email": "joan.lara.mora@gmail.com",
   "phone": "+52 (221) 2782-628",
@@ -28,6 +28,21 @@
   ]
  },
  "work": [
+  {
+   "name": "RedGPS",
+   "position": "Desarrollador web",
+   "url": "https://redgps.com",
+   "gerente": {
+    "name": "Salvador Orozco",
+    "email": "salvador@redgps.com",
+    "phone": ""
+   },
+   "location": {
+
+   },
+   "startDate": "2022-10-27",
+   "endDate": "actual"
+  },
   {
    "name": "Jóvenes Construyendo el Futuro",
    "position": "Semi-senior developer",
@@ -69,7 +84,7 @@
     "countryCode": "MX",
     "region": "Puebla"
    },
-   "startDate": "2022-08-01",
+   "startDate": "20-08-01",
    "endDate": "2021-08-01",
    "summary": "Wrote code and maintained software",
    "highlights": [

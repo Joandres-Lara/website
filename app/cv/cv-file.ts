@@ -33,6 +33,8 @@ export default class CvFile {
 
   if ((Number(modificationTimeInternalFile)) < (Number(modificationTimeJson)) ) {
    await this.internalFile.render();
+  } else {
+   await this.internalFile.obtaingLastFileCreated();
   }
 
   return this;
