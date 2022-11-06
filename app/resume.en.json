@@ -1,0 +1,257 @@
+{
+ "basics": {
+  "name": "Joan Andrés Lara Mora",
+  "label": "Fullstack Developer",
+  "image": "",
+  "email": "joan.lara.mora@gmail.com",
+  "phone": "+52 (221) 2782-628",
+  "url": "https://website-joandres-lara.vercel.app/",
+  "summary": "Self-motivated Developer adds high level of experience over more than 5 years collaborating and working on multiple web-based projects. Passionate, hardworking coder with penchant for developing customized interfaces that factor in unique demands for accessibility, reachability and security. Organized approach to meeting multiple, concurrent deadlines. Pulls from active knowledge of current technology landscape to promote best practices in web design.",
+  "location": {
+   "address": "Agustín Melgar #1112, Col. Mayorazgo",
+   "postalCode": "72450",
+   "city": "Heroica Puebla de Zaragoza",
+   "countryCode": "MX",
+   "region": "Puebla"
+  },
+  "profiles": [
+   {
+    "network": "Linkedin",
+    "username": "Joan Andrés Lara Mora",
+    "url": "https://www.linkedin.com/in/joan-andr%C3%A9s-lara-mora-194444224"
+   },
+   {
+    "network": "Github",
+    "username": "Joandres-Lara",
+    "url": "https://github.com/Joandres-Lara"
+   }
+  ]
+ },
+ "work": [
+  {
+   "name": "RedGPS",
+   "position": "Desarrollador web",
+   "url": "https://redgps.com",
+   "gerente": {
+    "name": "Salvador Orozco",
+    "email": "salvador@redgps.com",
+    "phone": ""
+   },
+   "location": {
+
+   },
+   "startDate": "2022-10-27",
+   "endDate": "actual"
+  },
+  {
+   "name": "Jóvenes Construyendo el Futuro",
+   "position": "Semi-senior developer",
+   "url": "",
+   "gerente": {
+    "name": "C.P. Armando Rivera García",
+    "email": "armando.rivera@decapacsc.com",
+    "phone": "+522222427301"
+   },
+   "location": {
+    "address": "Priv. 24-A Sur 3511, Col. Mirador",
+    "city": "Heroica Puebla de Zaragoza",
+    "postalCode": "72540",
+    "countryCode": "MX",
+    "region": "Puebla"
+   },
+   "startDate": "2021-08-01",
+   "endDate": "2022-08-01",
+   "summary": "Wrote code and maintained software",
+   "highlights": [
+    "Designed customized solutions for proposals to potential customers.",
+    "Developed clear specifications for project plans using customer requirements.",
+    "Added Cypress dependency for E2E testing of the web app, which decreased 50% errors in production."
+   ]
+  },
+  {
+   "name": "ProOperaciones",
+   "position": "Junior developer",
+   "url": "",
+   "gerente": {
+    "name": "Ulises Manuel Póntigo",
+    "email": "ulises.manuel@solucionessore.com",
+    "phone": "+522226836072"
+   },
+   "location": {
+    "address": "Priv. 24-A Sur 3511, Col. Mirador",
+    "city": "Heroica Puebla de Zaragoza",
+    "postalCode": "72450",
+    "countryCode": "MX",
+    "region": "Puebla"
+   },
+   "startDate": "20-08-01",
+   "endDate": "2021-08-01",
+   "summary": "Wrote code and maintained software",
+   "highlights": [
+    "Updated old code bases to modern development standards, improving functionality.",
+    "Introduced agile methodologies and development best practices to division to enhance product development.",
+    "Pioneered new methods of code review to incorporate wider range of voices.",
+    "Discussed issues with team members to provide resolution and apply best practices.",
+    "Led version control efforts for organization, employing public and open source repositories.",
+    "Developed software for desktop and mobile operating systems.",
+    "Reusable and reliable code designed for use in distributed cloud environments.",
+    "Built an application to calculate employee taxes (ISR, IMSS, etc) with zero dependencies.",
+    "Designed web pages.",
+    "Refactored native PHP code to the Laravel Framework, for the CEO and take advantage of Blade's templating engine, for a faster development experience.",
+    "Used React with Laravel as a SPA (Single Page Application).",
+    "Performed a CLI optimization calculating thousands of taxes at the same time, increasing speed up to 200%.",
+    "Changed custom repository versioning to Git.",
+    "The transition to the Next JS Framework has begun.",
+    "Kanban Agile metologic was added for the delivery of tasks for each development and learning for each of the developers, using the Trello application for this purpose.",
+    "Managed CI/CD with Circle CI product, custom Docker images per app, and custom bash scripts to update files on hosting, Hostinger Inc.",
+    "Mantained code wrote in .NET"
+   ]
+  }
+ ],
+ "volunteer": [],
+ "education": [
+  {
+   "institution": "Platzi",
+   "url": "https://platzi.com/",
+   "area": "Software Development",
+   "studyType": "Course",
+   "startDate": "2019-09-01",
+   "endDate": "2019-12-01",
+   "document": "Certified",
+   "score": null,
+   "courses": []
+  },
+  {
+   "institution": "Instituto de Computación e Inglés",
+   "url": "https://ico.com",
+   "area": "Software Development",
+   "studyType": "Regular",
+   "startDate": "2016-08-01",
+   "endDate": "2018-09-01",
+   "document": null,
+   "score": null,
+   "courses": []
+  },
+  {
+   "institution": "Telebachillerato Sontecomapan Veracruz de Ignacio de la llave",
+   "url": null,
+   "area": "General",
+   "studyType": "Regular",
+   "startDate": "2012-08-01",
+   "endDate": "2015-07-01",
+   "document": "Certified",
+   "score": "9.4",
+   "courses": []
+  }
+ ],
+ "softwareSkills": [
+  {
+   "name": "Figma",
+   "level": "Medium",
+   "keywords": ["Design", "Mockup"]
+  },
+  {
+   "name": "Vim",
+   "level": "Medium",
+   "keywords": ["CLI", "Text editor", "Linux"]
+  },
+  {
+   "name": "Git",
+   "level": "Master",
+   "keywords": ["Linux"]
+  },
+  {
+   "name": "Github",
+   "level": "Master",
+   "keywords": ["Code version"]
+  },
+  {
+   "name": "Codespaces",
+   "level": "Master",
+   "keywords": []
+  }
+ ],
+ "awards": [],
+ "certificates": [],
+ "publications": [],
+ "skills": [
+  {
+   "name": "Web Development",
+   "level": "Master",
+   "keywords": ["HTML", "CSS", "JavaScript", "PHP"]
+  },
+  {
+   "name": "Hardware and Software installation",
+   "level": "Medium",
+   "keywords": ["Microsoft Office", "Windows 10", "Windows 11", "Linux"]
+  },
+  {
+   "name": "Mobile Design",
+   "level": "Medium",
+   "keywords": []
+  },
+  {
+   "name": "Continous integration systems",
+   "level": "Medium",
+   "keywords": []
+  },
+  {
+   "name": "Programming",
+   "level": "Master",
+   "keywords": []
+  },
+  {
+   "name": "Javascript experience",
+   "level": "Master",
+   "keywords": []
+  },
+  {
+   "name": "SQL Integration",
+   "level": "Medium",
+   "keywords": []
+  },
+  {
+   "name": ".NET mantained software",
+   "level": "Medium",
+   "keywords": []
+  }
+ ],
+ "languages": [],
+ "interests": [
+  {
+   "name": "Music creation",
+   "keywords": []
+  }
+ ],
+ "references": [
+  {
+   "name": "Jane Doe",
+   "reference": "Reference…"
+  }
+ ],
+ "softwareLanguages": [
+  "Javascript",
+  "PHP",
+  "Bash",
+  "Typescript",
+  "HTML",
+  "CSS",
+  "C#",
+  "Java",
+  ".NET"
+ ],
+ "projects": [
+  {
+   "name": "Project",
+   "description": "Description…",
+   "highlights": ["Won award at AIHacks 2016"],
+   "keywords": ["HTML"],
+   "startDate": "2019-01-01",
+   "endDate": "2021-01-01",
+   "url": "https://project.com/",
+   "roles": ["Team Lead"],
+   "entity": "Entity",
+   "type": "application"
+  }
+ ]
+}

@@ -1,0 +1,7 @@
+.button{
+ @appy py-10 px-6;
+}
+
+.button--variant-1{
+ @apply bg-black text-white;
+}

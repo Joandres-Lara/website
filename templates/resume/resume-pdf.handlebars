@@ -1,0 +1,134 @@
+{{#> layouts/layout-cv }}
+ {{#* inline "content"}}
+  <h1 class="text-center">{{basics.name}}</h1>
+  <h2 class="text-center">{{basics.label}}</h2>
+  <p>
+   <b>
+    <u>Contact</u>
+   </b>
+  </p>
+  <span>
+   <b>Address:</b>
+  </span>
+  <span>
+   {{basics.location.city}}, 
+   {{basics.location.address}}, 
+   {{basics.location.region}} 
+   {{basics.location.countryCode}} 
+   {{basics.location.postalCode}}
+  </span>
+  <br/>
+  <span>
+   <b>Phone:</b>
+  </span>
+  <span>
+   {{basics.phone}}
+  </span>
+  <br/>
+  <span>
+   <b>Email:</b>
+  </span>
+ <span>
+  {{basics.email}}
+ </span>
+ <br/>
+ <span>
+  <b>WWW:</b>
+ </span>
+ <span>
+  {{basics.url}}
+ </span>
+ <br/>
+ {{#each basics.profiles}}
+  <span>
+   <b>{{network}}:</b>  
+  </span>
+  <span>
+   {{url}}
+  </span>
+  <br/>
+ {{/each}}
+ <p>
+  <b>
+   <u>
+    Professional Summary
+   </u>
+  </b>
+ </p>
+ <span>
+  {{basics.summary}}
+ </span>
+ <p>
+  <b>
+   <u>
+    Skills
+   </u>
+  </b>
+ </p>
+ <ul>
+  {{#each skills}}
+   <li>{{name}}</li>
+  {{/each}}
+ </ul>
+ <p>
+  <u>
+   <b>
+    Work History
+   </b>
+  </u>
+ </p>
+ {{#each work}}
+  <span>
+   <b>{{startDate}} - {{endDate}}</b>
+  </span>
+  <br/>
+  <span>
+   <b>{{name}}, </b>
+  </span>
+  <span>
+   <b>{{position}}</b>
+  </span>
+  <br/>
+  <span>
+   <i>
+     {{gerente.name}} - {{gerente.email}} - {{gerente.phone}}
+    </i>
+  </span>
+  <br/>
+  <ul>
+   {{#each highlights}}
+    <li>{{this}}</li>
+   {{/each}}
+  </ul>
+ {{/each}}
+ <p>
+  <b>
+   <u>
+    Education
+   </u>
+  </b>
+ </p>
+ {{#each education}}
+  <p>
+   <span>
+    <u>
+     <b>{{startDate}} - {{endDate}}</b>
+    </u>
+   </span>
+   <br/>
+   <span>
+    <u>
+     <b>{{institution}}</b>
+    </u>
+   </span>
+   <br/>
+   <span>
+    <u>
+     <b>{{document}}</b>
+    </u>
+   </span>
+   <br/>
+  </p>
+ {{/each}}
+ {{/inline}}
+{{/layouts/layout-cv}}

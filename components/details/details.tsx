@@ -4,6 +4,7 @@ import linkedinSrcSvg from "assets/icon-linkedin.svg";
 import emailSrcSvg from "assets/icon-email.svg";
 import arrowDownSrcSvg from "assets/icon-arrow-down.svg";
 import classesDetails from "./details.module.css";
+import Button from "components/ui/button";
 
 export default function Details() {
  return (
@@ -28,15 +29,19 @@ export default function Details() {
     <div className="w-full flex flex-col items-center">
      <h2 className="text-black text-4xl py-6">Fullstack developer</h2>
      <div className="flex flex-row justify-around w-8/12 md:w-3/6">
-      <a href="https://github.com/Joandres-Lara">
-       <Image width={50} height={50} layout="fixed" src={githubSrcSvg} />
-      </a>
       <a href="https://www.linkedin.com/in/joan-andr%C3%A9s-lara-mora-194444224/">
        <Image width={50} height={50} layout="fixed" src={linkedinSrcSvg} />
+      </a>
+      <a href="https://github.com/Joandres-Lara">
+       <Image width={50} height={50} layout="fixed" src={githubSrcSvg} />
       </a>
       <a href="mailto:joan.lara.mora@gmail.com">
        <Image width={50} height={50} layout="fixed" src={emailSrcSvg} />
       </a>
+     </div>
+
+     <div>
+      <Button>Descargar CV (ES)</Button>
      </div>
 
      <div className="flex flex-col items-center mt-16 opacity-40">

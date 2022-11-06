@@ -5,8 +5,9 @@
  "author": "Joan Andrés Lara Mora <joandres52752lm@gmail.com>",
  "license": "MIT",
  "dependencies": {
-  "@tanstack/react-query": "^4.2.3",
+  "handlebars": "^4.7.7",
   "next": "^12.2.5",
+  "puppeteer": "^19.2.2",
   "react": "^18.2.0",
   "react-dom": "^18.2.0"
  },
