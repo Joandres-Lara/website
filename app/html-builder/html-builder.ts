@@ -1,7 +1,4 @@
 import Handlebars from "handlebars";
-import fs from "fs/promises";
-import path from "path";
-
 /**
  * Utiliza una plantilla de handlebar para crear el HTML predeterminado
  */
@@ -39,8 +36,8 @@ export default class HTMLBuilder<T extends Record<string, unknown>> {
 
   while (currentIndex < configFiles.length) {
    const [partialLayoutName, partialLayoutFileName] = configFiles[currentIndex];
-   const fileContent = await fs.readFile(path.join("templates", "layouts", partialLayoutFileName));
-   yield [partialLayoutName, fileContent.toString()];
+   const { default: fileContent } = await import(`templates/layouts/${partialLayoutFileName}`);
+   yield [partialLayoutName, fileContent];
    currentIndex++;
   }
   return;
