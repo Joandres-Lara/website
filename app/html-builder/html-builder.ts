@@ -1,22 +1,93 @@
-export default class HTMLBuilder {
+import Handlebars from "handlebars";
+import fs from "fs/promises";
+import path from "path";
+
+/**
+ * Utiliza una plantilla de handlebar para crear el HTML predeterminado
+ */
+export default class HTMLBuilder<T extends Record<string, unknown>> {
+ /**
+  * 
+  * @type {boolean}
+  */
+ static #initializedLayouts = false;
+ /**
+  * @type {Record<string, string>}
+  */
+ static #partials = {
+  "layouts/layout-cv": "layout-cv.handlebars"
+ };
+ /**
+  * @template T
+  */
+ dataByTemplate: T;
  /**
   * 
   */
- content = "";
+ contentTemplateByHandlebars = "";
  /**
   * 
   */
- constructor(content?: string) {
-  if (typeof content == "string") {
-   this.content = content;
+ instanceTemplateHandlebar;
+ /**
+  * 
+  * 
+  */
+ private static async * getAllPartialLayoutsFiles() {
+  const configFiles = Object.entries(HTMLBuilder.#partials);
+  let currentIndex = 0;
+
+  while (currentIndex < configFiles.length) {
+   const [partialLayoutName, partialLayoutFileName] = configFiles[currentIndex];
+   const fileContent = await fs.readFile(path.join("templates", "layouts", partialLayoutFileName));
+   yield [partialLayoutName, fileContent.toString()];
+   currentIndex++;
   }
+  return;
+ }
+ /**
+  * 
+  * @returns {Promise<void>}
+  */
+ private static async initializeLayouts() {
+  if (!HTMLBuilder.#initializedLayouts) {
+   for await (const [keyPartialLayout, partialContentLayout] of HTMLBuilder.getAllPartialLayoutsFiles()) {
+    Handlebars.registerPartial(keyPartialLayout, partialContentLayout);
+   }
+   HTMLBuilder.#initializedLayouts = true;
+  }
+ }
+ /**
+  * 
+  * @returns {Promise<void>}
+  */
+ static async init() {
+  await this.initializeLayouts();
+ }
+ /**
+  * 
+  */
+ constructor(contentTemplateByHandlebars: string, dataByTemplate: T) {
+  this.dataByTemplate = dataByTemplate;
+  this.contentTemplateByHandlebars = contentTemplateByHandlebars;
+  this.instanceTemplateHandlebar = Handlebars.compile(contentTemplateByHandlebars);
+ }
+ /**
+  * 
+  * @param {T} data
+  * @returns {HTMLBuilder}
+  */
+ setData(data: T) {
+  this.dataByTemplate = data;
+  return this;
  }
  /**
   * 
   * @param content 
   */
  setContent(content: string) {
-  this.content = content;
+  this.contentTemplateByHandlebars = content;
+  this.instanceTemplateHandlebar = Handlebars.compile(content);
   return this;
  }
  /**
@@ -24,7 +95,7 @@ export default class HTMLBuilder {
   * @returns 
   */
  getContent() {
-  return this.content;
+  return this.contentTemplateByHandlebars;
  }
 
  /**
@@ -32,7 +103,7 @@ export default class HTMLBuilder {
   * @returns 
   */
  toHTML(): string {
-  return this.content.replace(/\n/, "");
+  return this.instanceTemplateHandlebar(this.dataByTemplate);
  }
  /**
   * 

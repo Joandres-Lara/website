@@ -1,57 +1,72 @@
 import type ResumableFile from "./resumable-file";
 import fs from "fs/promises";
-import path from "path";
-import HTMLBuilder from "app/html-builder/html-builder";
+import HtmlToPdf from "app/html-to-pdf/html-to-pdf";
+import ResumeHtml from "./resume-html";
 
 export default class ResumePdf implements ResumableFile {
  /**
   * 
   */
- buff: Buffer = Buffer.from("");
+ bufferFile: Buffer = Buffer.from("");
  /**
   * 
   */
  static FILE_OUTPUT_PATH = "app/resume.pdf";
- static FILE_TEMPLATE_NAME = "resume-pdf.template";
+ static FILE_TEMPLATE_NAME = "resume-pdf.handlebars";
  /**
   * 
   */
  toBuffer() {
-  return this.buff;
+  return this.bufferFile;
+ }
+
+ /**
+  * 
+  * @returns {Promise<Buffer>}
+  */
+ private async getBufferFile(): Promise<Buffer> {
+  return await fs.readFile(ResumePdf.FILE_OUTPUT_PATH);
  }
  /**
   * 
+  * @returns {Promise<boolean>}
   */
- private async getTemplateContent() {
-  return (await fs.readFile(path.join("templates", "resume", ResumePdf.FILE_TEMPLATE_NAME))).toString();
+ async fileExist(): Promise<boolean> {
+  try {
+   await fs.access(ResumePdf.FILE_OUTPUT_PATH, fs.constants.F_OK);
+   return true;
+  } catch (e) {
+   return false;
+  }
+ }
+
+ async obtaingLastFileCreated() {
+  if (await this.fileExist()) {
+   this.bufferFile = await this.getBufferFile();
+  }
  }
  /**
   * 
   * 
   */
  async render(): Promise<void> {
-  try {
-   const htmlBuilder = new HTMLBuilder(await this.getTemplateContent());
-   this.buff = await htmlBuilder.toBuffer();
-   fs.appendFile(ResumePdf.FILE_OUTPUT_PATH, this.buff);
-
-  } catch (e) {
-   console.error(e)
-   console.error(`Can't create file`);
-  }
-
+  const htmlResume = new ResumeHtml();
+  await htmlResume.render();
+  const htmlTransformedContent = htmlResume.toHtml();
+  const htmlToPdfInstance = new HtmlToPdf();
+  htmlToPdfInstance.setContent(htmlTransformedContent);
+  await htmlToPdfInstance.render();
+  this.bufferFile = htmlToPdfInstance.toBuffer();
+  fs.appendFile(ResumePdf.FILE_OUTPUT_PATH, this.bufferFile);
  }
  /**
   * 
   */
  async getLastModifiedDate(): Promise<Date> {
-  try {
-   await fs.access(ResumePdf.FILE_OUTPUT_PATH, fs.constants.F_OK)
-  } catch (e) {
-   // No tiene accesso o no existe el archivo
-   return new Date(0);
+  if (await this.fileExist()) {
+   const { mtime: modificationTipeFile } = await fs.stat(ResumePdf.FILE_OUTPUT_PATH);
+   return modificationTipeFile;
   }
-  const { mtime: modificationTipeFile } = await fs.stat(ResumePdf.FILE_OUTPUT_PATH);
-  return modificationTipeFile;
+  return new Date(0);
  }
 }
