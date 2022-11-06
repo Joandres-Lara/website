@@ -1,7 +1,5 @@
 import HTMLBuilder from "app/html-builder/html-builder";
 import jsonCv from "app/resume.en.json";
-import fs from "fs/promises";
-import path from "path";
 
 export default class ResumeHtml {
  /**
@@ -24,7 +22,8 @@ export default class ResumeHtml {
  * @returns {string}
  */
  private async getTemplateContent() {
-  return (await fs.readFile(path.join("templates", "resume", ResumeHtml.FILE_TEMPLATE_NAME))).toString();
+  const { default: content } = await import(`templates/resume/${ResumeHtml.FILE_TEMPLATE_NAME}`);
+  return content;
  }
  /**
   * 
