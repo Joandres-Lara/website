@@ -1,8 +1,9 @@
-import NextLink, { LinkProps } from "next/link";
+import NextLink from "next/link";
 import classes from "./link.module.css";
-import { ReactNode } from "react";
 
-export default function Link({ href = "", children = null, ...rest } : LinkProps & {children: ReactNode}) {
+type LinkProps = Parameters<typeof NextLink>[0]
+
+export default function Link({ href = "", children = null, ...rest } : LinkProps) {
  return (
   <NextLink href={href} {...rest}>
    <a className={classes.link}>
