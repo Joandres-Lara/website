@@ -4,7 +4,7 @@ import linkedinSrcSvg from "assets/icon-linkedin.svg";
 import emailSrcSvg from "assets/icon-email.svg";
 import arrowDownSrcSvg from "assets/icon-arrow-down.svg";
 import classesDetails from "./details.module.css";
-import Button from "components/ui/button";
+import Link from "components/ui/link";
 
 export default function Details() {
  return (
@@ -41,7 +41,7 @@ export default function Details() {
      </div>
 
      <div>
-      <Button>Descargar CV (ES)</Button>
+      <Link href='/api/download-cv' download>Descargar CV (ES)</Link>
      </div>
 
      <div className="flex flex-col items-center mt-16 opacity-40">

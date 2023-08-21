@@ -51,9 +51,14 @@ export default class ResumePdf implements ResumableFile {
   */
  async render(): Promise<void> {
   const htmlResume = new ResumeHtml();
+  const htmlToPdfInstance = new HtmlToPdf();
+
+  if(!(await htmlToPdfInstance.createPage())){
+   await this.obtaingLastFileCreated();
+  }
+  
   await htmlResume.render();
   const htmlTransformedContent = htmlResume.toHtml();
-  const htmlToPdfInstance = new HtmlToPdf();
   htmlToPdfInstance.setContent(htmlTransformedContent);
   await htmlToPdfInstance.render();
   this.bufferFile = htmlToPdfInstance.toBuffer();

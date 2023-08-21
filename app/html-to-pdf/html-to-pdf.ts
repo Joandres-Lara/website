@@ -1,4 +1,4 @@
-import { launch } from "puppeteer";
+import { Page, launch } from "puppeteer";
 
 export default class HtmlToPdf {
  /**
@@ -9,6 +9,19 @@ export default class HtmlToPdf {
   * 
   */
  buff;
+ /**
+  * 
+  */
+ #argsPupetter = {
+  // Disable linux sandbox
+  // https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#setting-up-chrome-linux-sandbox
+  args: ["--no-sandbox", "--disable-setuid-sandbox"]
+ };
+ /**
+  * 
+  * @type {import("puppeteer").Page}
+  */
+ #page: Page | null = null;
  /**
   * 
   */
@@ -27,13 +40,26 @@ export default class HtmlToPdf {
  /**
   * 
   */
+ async createPage() {
+  try {
+   if (this.#page) {
+    return this.#page;
+   }
+   this.#page = await (await launch(this.#argsPupetter)).newPage();
+   return this.#page;
+  } catch (e) {
+   console.error(e);
+   return null;
+  }
+ }
+ /**
+  * 
+  */
  async render() {
-  const browser = await launch({
-   // Disable linux sandbox
-   // https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#setting-up-chrome-linux-sandbox
-   args: ["--no-sandbox", "--disable-setuid-sandbox"]
-  });
-  const page = await browser.newPage();
+  const page = await this.createPage();
+  if (!page) {
+   return;
+  }
   await page.setContent(this.content);
   await page.content();
   this.buff = await page.pdf();

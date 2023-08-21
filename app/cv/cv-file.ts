@@ -31,7 +31,7 @@ export default class CvFile {
   const { mtime: modificationTimeJson } = await fs.stat("app/resume.en.json");
   const modificationTimeInternalFile = await this.internalFile.getLastModifiedDate();
 
-  if ((Number(modificationTimeInternalFile)) < (Number(modificationTimeJson)) ) {
+  if ((Number(modificationTimeInternalFile)) < (Number(modificationTimeJson))) {
    await this.internalFile.render();
   } else {
    await this.internalFile.obtaingLastFileCreated();
