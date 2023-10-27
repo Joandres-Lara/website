@@ -11,7 +11,7 @@ export default class ResumePdf implements ResumableFile {
  /**
   * 
   */
- static FILE_OUTPUT_PATH = "app/resume.pdf";
+ static FILE_OUTPUT_PATH = "public/resume.pdf";
  static FILE_TEMPLATE_NAME = "resume-pdf.handlebars";
  /**
   * 
