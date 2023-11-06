@@ -20,7 +20,7 @@
  transform: rotate(45deg) translate(-350px);
 
  @media screen(md) {
-  transform: rotate(45deg) scale(1.25) translate(-70px, -100px);
+  transform: rotate(45deg) scale(1.25) translate(-100px, -20px);
  }
 }
 
